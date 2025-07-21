@@ -56,15 +56,17 @@
     }
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
       padding: 0 20px;
     }
     .product {
       border: 1px solid #f1d6dc;
       border-radius: 10px;
-      padding: 10px;
+      padding: 15px;
       background-color: #fff;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     }
     .product img {
       width: 100%;
@@ -73,6 +75,24 @@
     .product h3 {
       margin: 10px 0 5px;
       color: #b26e63;
+    }
+    .product p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+    .price {
+      color: #d38b9b;
+      font-weight: bold;
+    }
+    .order-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 15px;
+      background-color: #b26e63;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
     }
     footer {
       background-color: #f8e8ee;
@@ -143,17 +163,20 @@
       <div class="product">
         <img src="https://i.imgur.com/OvMZBs9.jpg" alt="لوحة فن تجريدي">
         <h3>لوحة فن تجريدي</h3>
-        <p>تصميم عصري يضفي حياة على الجدار.</p>
+        <p class="price">2500 دج</p>
+        <a class="order-btn" href="#order">اطلب الآن</a>
       </div>
       <div class="product">
         <img src="https://i.imgur.com/4xChL3U.jpg" alt="ساعة حائط ذهبية">
         <h3>ساعة حائط ذهبية</h3>
-        <p>إضافة أنيقة تضبط الوقت والأناقة.</p>
+        <p class="price">1900 دج</p>
+        <a class="order-btn" href="#order">اطلب الآن</a>
       </div>
       <div class="product">
         <img src="https://i.imgur.com/JXjtbNf.jpg" alt="مرآة ديكور دائرية">
         <h3>مرآة دائرية</h3>
-        <p>تكبير بصري للمكان وإضاءة طبيعية.</p>
+        <p class="price">2800 دج</p>
+        <a class="order-btn" href="#order">اطلب الآن</a>
       </div>
     </div>
   </div>
@@ -163,10 +186,7 @@
     <form id="orderForm">
       <input type="text" id="name" placeholder="الاسم الكامل" required>
       <input type="tel" id="phone" placeholder="رقم الهاتف" required>
-      <select id="wilaya" required>
-        <option value="">اختر ولايتك</option>
-        <!-- الولايات الـ58 ستُدرج هنا تلقائيًا لاحقًا بالكود -->
-      </select>
+      <select id="wilaya" required></select>
       <textarea id="address" placeholder="العنوان الكامل" required></textarea>
       <textarea id="product" placeholder="اسم المنتج أو الملاحظة"></textarea>
       <button type="submit">إرسال الطلب عبر واتساب</button>
@@ -180,7 +200,6 @@
   <a id="whatsapp" href="https://wa.me/213792191267" target="_blank">💬</a>
 
   <script>
-    // قائمة الولايات الجزائرية كاملة
     const wilayas = [
       "أدرار","الشلف","الأغواط","أم البواقي","باتنة","بجاية","بسكرة","بشار",
       "البليدة","البويرة","تمنراست","تبسة","تلمسان","تيارت","تيزي وزو",
